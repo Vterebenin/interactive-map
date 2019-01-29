@@ -1,0 +1,67 @@
+body {
+	background-color: #30336b;
+	position: relative;
+}
+.b-map-list {
+	padding: 10px 20px;
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	z-index: 2;
+	background-color: #ffffff;
+}
+.b-map-list ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.b-map-list li {
+	padding-bottom: 10px;
+}
+svg {
+	position: relative;
+	top: 830px;
+	left: 1200px;
+	z-index: -1;
+	transform: scale(5);
+}
+
+
+@keyframes flashing {
+	0% {
+		fill: #eb4d4b;
+	}
+	10% {
+		fill: #ffffff;
+	}
+	20% {
+		fill: #eb4d4b;
+	}
+	30% {
+		fill: #ffffff;
+	}
+	40% {
+		fill: #eb4d4b;
+	}
+	50% {
+		fill: #ffffff;
+	}
+	60% {
+		fill: #eb4d4b;
+	}
+	70% {
+		fill: #ffffff;
+	}
+	80% {
+		fill: #eb4d4b;
+	}
+	90% {
+		fill: #ffffff;
+	}
+	90% {
+		fill: #eb4d4b;
+	}	
+	100% {
+		fill: #ffffff;
+	}
+}
