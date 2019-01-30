@@ -1,9 +1,16 @@
 jQuery(function ($) {
 	$('.city__goto').click(function (e) { // ловим клик по ссылке с классом go_to
+		// очистка свойств, дабы при повторном клике мы получали тот же эффект анимации
+		$(".city__location").css({
+				"-webkit-animation": "",
+				"animation": "",
+				"animation-fill-mode": ""
+		});
+		
 		var element = $(this).attr('href'); 
 		var destination = $(element).position();
-		if ($(destination).length != 0) {
-			// если позволяют границы документа, то переносимся к элементу, ставя его в центр экрана
+		if ($(destination).length != 0) {// если такая локация существует
+			// переносимся к элементу, ставя его в центр экрана
 			$("html,body").animate({ 
 				scrollTop: destination.top - ($(window).height() / 2), 
 				scrollLeft: destination.left - ($(window).width() / 2) 
@@ -15,13 +22,7 @@ jQuery(function ($) {
 				"animation": "flashing 4s ease-in-out 0.3s",
 				"animation-fill-mode": "both"
 			});
-			// очистка свойств, дабы при повторном клике мы получали тот же эффект анимации
-			setInterval(function() {
-				$(element).css({
-					"-webkit-animation": "",
-					"animation": "",
-				})
-			}, 4300);
+			
 		}
 		return false; // выключаем стандартное действие
 	});
